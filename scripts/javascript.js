@@ -1,8 +1,16 @@
-const button = document.querySelector("button");
+const button = document.querySelector(".button")
+const text = document.querySelector(".operation")
 
-button.addEventListener("click",updateMessage)
+button.addEventListener("click",updateOperation)
 
-function updateMessage(){
-    const message = prompt("Message before detonation: ");
-    button.textContent =  message;
+function updateOperation(){
+
+    if(button.textContent === 'Start Machine!'){
+        button.textContent = "Stop Machine!"
+        text.textContent = 'The machine is operating...'
+    }
+    else{
+        button.textContent = 'Start Machine!'
+        text.textContent = 'The machine is idle...'
+    }
 }
